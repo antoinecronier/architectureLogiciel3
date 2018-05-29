@@ -1,12 +1,18 @@
 package com.tactfactory.architecturelogiciel.builder;
 
+import com.tactfactory.architecturelogiciel.builder.entity.Cylindre;
 import com.tactfactory.architecturelogiciel.builder.entity.Vehicule;
 
 public class BuilderMain {
 
 	public static void main(String[] args) {
 		VehiculeBuilder builder = new VehiculeBuilder();
-		Vehicule voiture1 = builder.configurationVoiture1().build();
+		
+		Vehicule voiture1 = builder
+				.configurationVoiture1()
+				.addCylindre(new Cylindre(20, 10, 1))
+				.build();
+
 		System.out.println(voiture1);
 		
 		Vehicule moto1 = builder
