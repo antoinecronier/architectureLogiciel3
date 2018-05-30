@@ -1,9 +1,14 @@
 package com.tactfactory.architecturelogiciel.builder.entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
-public abstract class Vehicule {
+import com.tactfactory.architecturelogiciel.composite.Component;
+import com.tactfactory.architecturelogiciel.composite.Course;
+
+public abstract class Vehicule extends Component {
 	private List<Roue> roues = new ArrayList<Roue>();
 	private Carrosserie carrosserie;
 	private Cylindre cylindre;
@@ -50,6 +55,47 @@ public abstract class Vehicule {
 	}
 	
 	public Vehicule() {
+	}
+	
+	
+	
+	@Override
+	public void addVehicule(Course course, Vehicule vehicule) {
+
+	}
+
+	@Override
+	public void addCourse(Course course) {
+
+	}
+
+	@Override
+	public void removeCourse(Course course) {
+
+	}
+
+	@Override
+	public void removeVehicule(Vehicule vehicule) {
+
+	}
+
+	@Override
+	public void removeAllVehicule(Vehicule vehicule) {
+
+	}
+
+	@Override
+	public void Remove(Component component) {
+
+	}
+
+	@Override
+	public void run() {
+		Date date = new Date();
+		Random rand = new Random();
+		date.setMinutes(rand.nextInt(59));
+		date.setSeconds(rand.nextInt(59));
+		this.setDateEnd(date);
 	}
 
 	@Override
